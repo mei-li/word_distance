@@ -1,3 +1,4 @@
+import click
 
 
 def shortest_word_distance_iter(iterable, word1, word2):
@@ -33,3 +34,16 @@ def shortest_word_distance(fp, word1, word2):
             for word in line.split():
                 yield word
     return shortest_word_distance_iter(file_words(), word1, word2)
+
+
+@click.command()
+@click.option("--filename", required=True, help="Filename to count word distance.")
+@click.option("--word1", required=True, help="First word to measure min distance from.")
+@click.option("--word2", required=True, help="Second word to measure min distance from.")
+def main(filename, word1, word2):
+    with open(filename) as fp:
+        print(shortest_word_distance(fp, word1, word2))
+
+
+if __name__ == '__main__':
+    main()
