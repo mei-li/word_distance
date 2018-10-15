@@ -1,11 +1,13 @@
-def word_distance(iterable, word1, word2):
+
+
+def shortest_word_distance_iter(iterable, word1, word2):
     """
     Returns the minimum distance of 2 words in an iterable of words.
 
     Examples:
-        >>> word_distance('Where are you going?'.split(), 'are', 'you')
+        >>> shortest_word_distance_iter('Where are you going?'.split(), 'are', 'you')
         ... 0
-        >>> word_distance('a brand new bike is still a new bike'.split(), 'a', 'bike')
+        >>> shortest_word_distance_iter('a brand new bike is still a new bike'.split(), 'a', 'bike')
         ... 1
     """
     min_distance = None
