@@ -31,3 +31,10 @@ def test_word_distance_integration():
                          'development') == 2
 
 
+def test_file_word_distance():
+    fp = io.StringIO(
+        """This is a multiline
+           file to find the distance of
+           words""")
+
+    assert shortest_word_distance(fp, 'is', 'words') == 8

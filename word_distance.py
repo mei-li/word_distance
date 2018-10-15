@@ -23,3 +23,13 @@ def shortest_word_distance_iter(iterable, word1, word2):
             min_distance = min(min_distance, cur_distance - 1) if min_distance else cur_distance - 1
     return min_distance
 
+
+def shortest_word_distance(fp, word1, word2):
+    """
+    Returns shortest distance of (word1, word2) that was found in fp file.
+    """
+    def file_words():
+        for line in fp:
+            for word in line.split():
+                yield word
+    return shortest_word_distance_iter(file_words(), word1, word2)
